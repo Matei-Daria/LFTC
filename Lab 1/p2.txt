@@ -1,0 +1,25 @@
+fun prime: int x {
+	for: int d from 0 to x/2 
+		/ if: x mod d = 0
+			/ ret false; 
+	ret true;
+} ret bool;
+
+
+fun gcd: int a, int b {
+	while: a /= b {
+		if: a > b
+			/ a is a-b;
+		else
+			/ b is b-a;
+	}
+	ret a;
+} ret int;
+
+
+fun secondOrderEquation: int a, int b, int c {
+	int det is b*b - 4*a*c;
+	int root1 is (-b + sqrt(det))/2a;
+	int root2 is (-b - sqrt(det))/2a;
+	ret root1, root2;
+} ret int, int;
