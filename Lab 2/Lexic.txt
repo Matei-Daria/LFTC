@@ -1,0 +1,25 @@
+---Alphabet:
+
+- Lowercase (a-z) and uppercase (A-Z) letters
+- Digits (0-9)
+
+
+---Lexic:
+
+Special symbols, representing:
+- operators + - * / = == < <= > >=
+- separators [ ] { } ( ) ; , " // space newline
+- reserved words
+	int string if else while print read return
+
+Identifiers:
+- identifier = (letter){letter|digit}
+- letter = "A"|"B"|..|"Z"|"a"|"b"..|"z"
+- digit = "0"|"1"|..|"9"
+
+Constants: 
+- int_constant = ["+"|"-"] non_zero_digit {digit} | "0"
+- non_zero_digit = "1"|"2"|..|"9"
+- string_constant = """{letter|digit|"_"|" "}"""
+- special_string_constant = """{letter|digit|"_"|" "|special_char}"""
+- special_char = "!"|"@"|"#"|"%"|"&"

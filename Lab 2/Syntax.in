@@ -1,0 +1,26 @@
+program = statement | statement "newline" program
+statement = (var_statement|assign_statement|arr_statement|if_statement|while_statement|function_call_statement|return_statement) ";"
+
+var_statement = int_statement | string_statement | special_string_statement
+int_statement = "int" identifier_list
+string_statement = "string" identifier_list
+special_string_statement = "specialString" identifier_list
+identifier_list = identifier ["=" expression] {"," identifier ["=" expression]}
+expression = int_expression | string_expression
+int_expression = int_constant | identifier | int_expression ("+"|"-"|"*"|"/") int_expression
+string_expression = string_constant | identifier | string_expression "+" string_expression
+
+assign_statement = identifier "=" expression
+
+arr_statement = "arr" "[" positive_number "]" no_assign_identifier_list
+no_assign_identifier_list = identifier {"," identifier}
+
+if_statement = "if" "(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+while_statement = "while" "(" condition ")" "{" {statement} "}"
+condition = expression ("=="|"<"|"<="|">"|">=") expression
+
+function_call_statement = function_name "(" [expression_list] ")"
+function_name = "print" | "read"
+expression_list = expression{"," expression}
+
+return_statement = "return" expression
