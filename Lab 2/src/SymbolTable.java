@@ -9,6 +9,10 @@ public class SymbolTable {
         return hashTable.add(value);
     }
 
+    public void remove(String value) {
+        hashTable.remove(value);
+    }
+
     public boolean contains(String value) {
         return hashTable.contains(value);
     }
