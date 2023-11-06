@@ -1,0 +1,11 @@
+fun max: int a, int b, int c  {
+    int whatItDoes is "This function calculates the max between three integers";
+    print: whatItDoes;
+	if: a > b and a > c
+		{ ret a; }
+	elseif: b > a and b > c
+		{ ret b; }
+	ret c;
+} ret int;
+
+

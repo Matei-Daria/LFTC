@@ -31,7 +31,7 @@ public class HashTable {
     public void remove(String value) {
         if (this.contains(value)) {
             List<String> elements = this.buckets.get(this.hash(value));
-            elements.remove(getIndexInBucket(value));
+            elements.remove(getPosition(value).indexInBucket());
         }
     }
 
@@ -51,17 +51,17 @@ public class HashTable {
         return false;
     }
 
-    public int getIndexInBucket(String value) {
-        int hash = hash(value);
+    public HashTablePosition getPosition(String value) {
+        int bucket = hash(value);
 
-        List<String> elements = this.buckets.get(hash);
-        for (int col = 0; col < elements.size(); col++) {
-            if (elements.get(col).equals(value)) {
-                return col;
+        List<String> elementsInBucket = this.buckets.get(bucket);
+        for (int indexInBucket = 0; indexInBucket < elementsInBucket.size(); indexInBucket++) {
+            if (elementsInBucket.get(indexInBucket).equals(value)) {
+                return new HashTablePosition(bucket, indexInBucket);
             }
         }
 
-        return -1;
+        return new HashTablePosition(-1, -1);
     }
 
     public int getAsciiSumOfChars(String value) {
@@ -79,7 +79,7 @@ public class HashTable {
         sb.append("Size of table: ").append(tableSize).append("\n");
 
         for (int i = 0; i < tableSize; i++) {
-            sb.append("Bucket ").append(i).append(" : ");
+            sb.append(i).append(" : ");
             List<String> elements = buckets.get(i);
             for (int j = 0; j < elements.size(); j++) {
                 sb.append(elements.get(j));

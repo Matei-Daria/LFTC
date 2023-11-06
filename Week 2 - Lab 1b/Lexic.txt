@@ -7,10 +7,10 @@
 ---Lexic:
 
 Special symbols, representing:
-- operators + - * / = == < <= > >=
-- separators [ ] { } ( ) ; , " // space newline
+- operators + - * / is /= = < <= > >= and or
+- separators [ ] { } ( ) ; : , " // space newline tab
 - reserved words
-	int string if else while print read return
+	int string specialString if else elseif while print read ret fun
 
 Identifiers:
 - identifier = (letter){letter|digit}
@@ -20,6 +20,6 @@ Identifiers:
 Constants: 
 - int_constant = ["+"|"-"] non_zero_digit {digit} | "0"
 - non_zero_digit = "1"|"2"|..|"9"
-- string_constant = """{letter|digit|"_"|" "}"""
-- special_string_constant = """{letter|digit|"_"|" "|special_char}"""
+- string_constant = """{letter|digit|" "}"""
+- special_string_constant = """{letter|digit|" "|special_char}"""
 - special_char = "!"|"@"|"#"|"%"|"&"

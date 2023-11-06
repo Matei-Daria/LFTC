@@ -17,6 +17,10 @@ public class SymbolTable {
         return hashTable.contains(value);
     }
 
+    public HashTablePosition getSymbolTablePosition(String value) {
+        return hashTable.getPosition(value);
+    }
+
     @Override
     public String toString() {
         return hashTable.toString();

@@ -1,0 +1,9 @@
+fun max: int a, int b, int c  {
+	if: a > b and a > c
+		{ ret a; }
+	else-if: b > a and b > c
+		{ ret b; }
+	ret c;
+} ret int;
+
+

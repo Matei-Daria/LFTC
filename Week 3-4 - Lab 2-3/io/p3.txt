@@ -1,0 +1,7 @@
+fun printSomeStrings {
+    string helloWorld;
+    specialString helloWorldSpecial;
+    helloWorld is "Hello world";
+    helloWorldSpecial is "#@#@# Hello world!!! #@#@#";
+    print: helloWorld, helloWorldSpecial;
+} ret;
