@@ -1,0 +1,9 @@
+fun gcd: int a, int b {
+	while: a /= b {
+		if: a > b
+			{ a is a - b; }
+		else
+			{ b is b - a; }
+	}
+	ret a;
+} ret int;
